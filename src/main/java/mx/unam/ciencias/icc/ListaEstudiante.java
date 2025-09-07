@@ -38,6 +38,7 @@ public class ListaEstudiante {
          */
         public Nodo getAnterior() {
             // Aquí va su código.
+	    return anterior;
         }
 
         /**
@@ -45,7 +46,8 @@ public class ListaEstudiante {
          * @return el nodo siguiente del nodo.
          */
         public Nodo getSiguiente() {
-            // Aquí va su código.
+            // Aquí va su código.'
+	    return siguiente;
         }
 
         /**
@@ -54,6 +56,7 @@ public class ListaEstudiante {
          */
         public Estudiante get() {
             // Aquí va su código.
+	    return elemento;
         }
     }
 
@@ -70,6 +73,15 @@ public class ListaEstudiante {
      */
     public int getLongitud() {
         // Aquí va su código.
+	int longitud = 0;
+
+	if (elemento== null){
+	    longitud = 0;
+	}
+	while (elemento != null){
+	    longitud++;
+	    elemento = this.siguiente;
+	}
     }
 
     /**
@@ -79,6 +91,7 @@ public class ListaEstudiante {
      */
     public boolean esVacia() {
         // Aquí va su código.
+	return elemento == null;
     }
 
     /**
@@ -89,6 +102,7 @@ public class ListaEstudiante {
      */
     public void agregaFinal(Estudiante elemento) {
         // Aquí va su código.
+        while 
     }
 
     /**
@@ -154,6 +168,13 @@ public class ListaEstudiante {
      */
     public boolean contiene(Estudiante elemento) {
         // Aquí va su código.
+        if (this.elemento != null){
+	    
+            if (this.elemento.equals(elemento)){
+                return true;
+            }
+            this.elemento = this.siguiente;
+        };
     }
 
     /**
@@ -162,6 +183,12 @@ public class ListaEstudiante {
      */
     public ListaEstudiante reversa() {
         // Aquí va su código.
+        ListaEstudiante reversa = new ListaEstudiante();
+        Nodo n = rabo;
+        while (n != null ){
+            reversa.agregaFinal(n.elemento);
+            n = n.anterior;
+        }
     }
 
     /**
@@ -171,6 +198,11 @@ public class ListaEstudiante {
      */
     public ListaEstudiante copia() {
         // Aquí va su código.
+        ListaEstudiante copia = new ListaEstudiante();
+        Nodo n = cabeza;
+        while (n != null ){
+            copia.agregaFinal(n.elemento);
+            n = n.siguiente;
     }
 
     /**

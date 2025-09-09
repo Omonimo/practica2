@@ -430,26 +430,25 @@ public class ListaEstudiante {
      */
     public boolean equals(ListaEstudiante lista) {
         // Aquí va su código.
-        Nodo n = cabeza;
-        Nodo n2 = rabo;
-        Nodo nodoLista = lista.cabeza;
-        Nodo raboLista = lista.rabo;
-        if (n == null && nodoLista == null){
-            return true;
-        } else if (n == null || nodoLista == null){
-            return false;
-        } else if (getLongitud() != lista.getLongitud()){
-            return false;
-        } else {
-            while (n != null && nodoLista != null){
-                if (!n.elemento.equals(nodoLista.elemento)){
+       Nodo viajero = cabeza;
+       Nodo viajero2 = lista.cabeza;
+
+       if (lista == null){
+        return false;
+       }
+        if (this.getLongitud() != lista.getLongitud()){
+          return false;
+         } 
+            while (viajero != null && viajero2 != null){
+                if (!viajero.elemento.equals(viajero2.elemento)){
                     return false;
                 }
-                n = n.siguiente;
-                nodoLista = nodoLista.siguiente;
+                viajero = viajero.siguiente;
+                viajero2 = viajero2.siguiente;
             }
             return true;
-        }}
+        
+    }
 
     /**
      * Regresa el nodo cabeza de la lista.
